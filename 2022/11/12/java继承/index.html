@@ -6,14 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2022 | Hexo</title>
+  <title>Java Inheritance(继承) | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2022/index.html">
+  <meta name="description" content="Java继承相关语句">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java Inheritance(继承)">
+<meta property="og:url" content="http://example.com/2022/11/12/java%E7%BB%A7%E6%89%BF/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Java继承相关语句">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-11-12T08:23:42.000Z">
+<meta property="article:modified_time" content="2022-11-12T08:29:55.062Z">
 <meta property="article:author" content="Ding">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="继承">
+<meta property="article:tag" content="知识">
+<meta property="article:tag" content="Inheritance">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -142,36 +150,98 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-java继承" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/11/12/java%E7%BB%A7%E6%89%BF/" class="archive-article-date">
-  	<time datetime="2022-11-12T08:23:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-12</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/11/12/java%E7%BB%A7%E6%89%BF/">Java Inheritance(继承)</a>
+    <h1 class="article-title" itemprop="name">
+      Java Inheritance(继承)
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2022/11/12/java%E7%BB%A7%E6%89%BF/" class="archive-article-date">
+  	<time datetime="2022-11-12T08:23:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Java继承相关语句"><a href="#Java继承相关语句" class="headerlink" title="Java继承相关语句"></a>Java继承相关语句</h1><span id="more"></span>
+<h2 id="继承的概念"><a href="#继承的概念" class="headerlink" title="继承的概念"></a>继承的概念</h2><p>继承是面向对系程序设计的一个主要特征，是一种由已有的类创建新类的机制。它允许创建分等级、分层次。利用继承，我们可以先创建一个具有一系列相关对象的一般特性的通用类,然后根据该通用类再创建具有特殊特性的新类。新类继承通用类的状态和行为，并根据需要增加自己的新的状态和行为。由继承而得到的类称为子类或派生类，被继承的通用类称为父类、超类或基类。</p>
+<p>继承反映了类型之间的静态联系，它很好地模拟了现实世界中的分类别、多层饮的对象关系。在编程技术中，继承是一种代码复用技术，它使得我们可以在一定的基础上进行开发工作，而不需要一切从零开始。<br>注意，C++支持生重继承，即一个子类可以有多个超类。在Java 中，只支持单一继承，即一个子类只有一个超类，不允许多重继死，但通过接口,也可以间接实现多继承。</p>
+<h2 id="子类创建"><a href="#子类创建" class="headerlink" title="子类创建"></a>子类创建</h2><p>(1)  子类包含类的声明和类体两个部分；子类继承性是通过在子类的声明语句后面使用关键词<code>extends</code>来体现。</p>
+<p>(2)  创建子类的一般语法格式如下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[访问修饰符][类型修饰符] class 子类名 extends 超类 &#123;</span><br><span class="line">	[子类成员变量声明]</span><br><span class="line">	[子类方法定义]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>举个例子</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Manager</span> <span class="keyword">extends</span> <span class="title class_">Employee</span>&#123;</span><br><span class="line">	......</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果声明中没有<code>extands</code>关键字，则系统默认继承<code>Object</code>类</p>
+<h2 id="访问修饰符"><a href="#访问修饰符" class="headerlink" title="访问修饰符"></a>访问修饰符</h2><h3 id="1-类访问修饰符"><a href="#1-类访问修饰符" class="headerlink" title="1.类访问修饰符"></a>1.类访问修饰符</h3><p> 声明类时可以用两种访问修饰符：<code>public</code>和<code>缺省</code>，public为缺省（就是没有任何修饰符）。使用缺省修饰符类声明的类为友好类。在任意类中 ，<code>public</code>类都是可见的，如果希望包中成员能被包外的类访问，必须将类的声明为<code>pubilc</code>；友好类只能被同一个包中的类访问，在同一个包中是可见的。</p>
+<p>举个例子</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> mypackage1;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">A</span> &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">package</span> mypackage2;</span><br><span class="line"><span class="keyword">import</span> mypackage1.A;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">B</span>&#123;</span><br><span class="line">	A a;<span class="comment">//台法•A是public类，在任意类中可见</span></span><br><span class="line">	...</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">package</span> mypackage3;</span><br><span class="line"><span class="keyword">import</span> mypackage1.A;</span><br><span class="line"><span class="keyword">import</span> mypackage1.B;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">C</span> &#123;</span><br><span class="line">	A a;<span class="comment">//合法，A是public 类，在任意类中可见</span></span><br><span class="line">	B b;<span class="comment">//非法,B是友好类，在包外类中不可见</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">package</span> mypackage1;</span><br><span class="line"><span class="keyword">import</span> mypackage1.A;</span><br><span class="line"><span class="keyword">import</span> mypackage3.C;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">D</span>&#123;</span><br><span class="line">	A a;<span class="comment">//合法，A是public 类，在任何类中可见</span></span><br><span class="line">	B b;<span class="comment">//合法，B是友好类，但和D 在同一个包中</span></span><br><span class="line">	C c;<span class="comment">//非法，C是友好类，在包外类中不可见</span></span><br><span class="line">       ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-类成员访问修饰符"><a href="#2-类成员访问修饰符" class="headerlink" title="2.类成员访问修饰符"></a>2.类成员访问修饰符</h3><p>声明类成员空址和方法时，可使用的访问修饰行有四种;private、public、proreced 和缺省。</p>
+<h4 id="1-private-访问修饰符"><a href="#1-private-访问修饰符" class="headerlink" title="(1)  private 访问修饰符"></a>(1)  private 访问修饰符</h4><p>使用private声明的成员变量和方法称为私有变量和私有方法，例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> animalworld:</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Cat</span> (</span><br><span class="line">	<span class="keyword">private</span> <span class="type">float</span> weight;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="type">int</span> legs;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">eat</span> <span class="params">()</span> &#123;</span><br><span class="line">		System. out.println(<span class="string">&quot;我喜欢吃鱼&quot;</span>）：</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>私有变量和私有方法只能在声明它们的类中使用，在类外不可见，如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> animalworld;</span><br><span class="line">	<span class="keyword">class</span> <span class="title class_">Mouse</span> &#123;</span><br><span class="line">	<span class="keyword">private</span> String color;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">void</span> play)&#123;</span><br><span class="line">		Systerm.out. prindn(”我喜欢猫”），</span><br><span class="line">	 &#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span> <span class="params">(String[] args)</span> &#123;</span><br><span class="line">		Mouse Jerry= <span class="keyword">new</span> <span class="title class_">Mouse</span>);</span><br><span class="line">		<span class="type">Cat</span> <span class="variable">tom</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Catt</span>()) ;</span><br><span class="line">		tom.weight = <span class="number">23f</span> ; <span class="comment">//非法，在Cat 类的外部访问它的私有变量</span></span><br><span class="line">		tom.legs =<span class="number">4</span> ; <span class="comment">//非法，在Cat 类的外部访问它的私有变量</span></span><br><span class="line">        tom.eat() ; <span class="comment">//非法，在Cat 类的外部访问它的私有方法</span></span><br><span class="line">		Jerry.color = <span class="string">&quot;黑色&quot;</span> ; <span class="comment">//合法，在本类中访问私有变量</span></span><br><span class="line">        Jerry.play() &#123;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-public-修饰符"><a href="#2-public-修饰符" class="headerlink" title="(2)  public 修饰符"></a>(2)  public 修饰符</h4><p>使用 public 声明的成员变量和方法称为公有变量和公有方法，例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> animalworld;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Cat</span> &#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="type">float</span> weight ;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> legs ;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">()</span> &#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;我喜欢吃鱼&quot;</span>）;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-protected-访问修饰符"><a href="#3-protected-访问修饰符" class="headerlink" title="(3)  protected 访问修饰符"></a>(3)  protected 访问修饰符</h4><p>使用protected 声明的成员变量和方法称为受保护的变量和受保护的方法，例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> animalworld;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Cat</span> &#123;</span><br><span class="line">	<span class="keyword">protected</span> <span class="type">float</span> weight ;</span><br><span class="line">	<span class="keyword">protected</span> <span class="keyword">void</span> eat) &#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;我喜欢吃鱼&quot;</span>) ;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4）缺省访问修饰符"><a href="#4）缺省访问修饰符" class="headerlink" title="(4）缺省访问修饰符"></a>(4）缺省访问修饰符</h4><p>不使用 private protected 及public声明的成员变量和方法称为友好变量和友好方法。友好变量和友好方法能够在同一个包的其他类中被所屆类的对象或类名访问，而不能被任何包外类的对象或类名访问。例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> mypackage1 ;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Cat</span> &#123;</span><br><span class="line">	<span class="type">float</span> weight ;</span><br><span class="line">	<span class="keyword">static</span> <span class="type">int</span> legs ;</span><br><span class="line">	<span class="keyword">void</span> <span class="title function_">eat</span> <span class="params">()</span> &#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;我喜欢吃鱼&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">package</span> mypackage1;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Mouse</span> &#123;</span><br><span class="line">	<span class="keyword">void</span> <span class="title function_">f</span> <span class="params">()</span> &#123;</span><br><span class="line">		<span class="type">Cat</span> <span class="variable">tom</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Cat</span> ;</span><br><span class="line">		tom,.eight = <span class="number">23f</span>        <span class="comment">//合法，Cat 类和Mouse 类在同一个包中</span></span><br><span class="line">		Cat.legs = <span class="number">4</span> ;          <span class="comment">//合法</span></span><br><span class="line">		tom.eat();              <span class="comment">//合法</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">package</span> mypackage2;</span><br><span class="line"><span class="keyword">import</span> mypackage1.Cat;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Dog</span> &#123;</span><br><span class="line">	<span class="keyword">void</span> <span class="title function_">g</span><span class="params">()</span> &#123;</span><br><span class="line">		<span class="type">Cat</span> <span class="variable">tom</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Cat</span>(); </span><br><span class="line">		tom.weight =<span class="number">23f</span> ;    <span class="comment">//非法，weight 是 Cat 类的友好变量，而Cat 类和 Dog 类不在同一个包中</span></span><br><span class="line">		Cat.legs = <span class="number">4</span> ;       <span class="comment">//非法</span></span><br><span class="line">		tom.eat() ;          <span class="comment">//非法</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-子类的继承性"><a href="#3-子类的继承性" class="headerlink" title="3.子类的继承性"></a>3.子类的继承性</h3><p>子类能继承超类的成员交量和成员方法。在继承过程中，需要注意的是，类的每一个成员都被赋子了一定的访问权限，成员访问权限不同，子类对它的继承性也不同。子类对超类的继承性主要有以下三种情况：</p>
+<h4 id="1-在同一个包中，子类能继承超类的所有非private-成员。"><a href="#1-在同一个包中，子类能继承超类的所有非private-成员。" class="headerlink" title="(1)  在同一个包中，子类能继承超类的所有非private 成员。"></a>(1)  在同一个包中，子类能继承超类的所有非private 成员。</h4><p>例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> mypackage1;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="type">int</span> legs ;</span><br><span class="line">	<span class="keyword">protected</span> <span class="type">float</span> weight ;</span><br><span class="line">	String color ; </span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">f</span><span class="params">()</span> &#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">package</span> mypackage1;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Cat</span> <span class="keyword">extends</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line">	<span class="keyword">void</span> <span class="title function_">g</span><span class="params">()</span> &#123;</span><br><span class="line">		<span class="type">Cat</span> <span class="variable">tom</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Cat</span>() ;</span><br><span class="line">		tom.legs =<span class="number">4</span> ;          <span class="comment">//合法，继承了公有变量</span></span><br><span class="line">		tom.weight = <span class="number">23f</span> ;     <span class="comment">//合法，继承了受保护的变量</span></span><br><span class="line">		tom.color = <span class="string">&quot;白色&quot;</span> ;    <span class="comment">//合法,继承了友好变量</span></span><br><span class="line">		tom.f() ;              <span class="comment">//非法,私有方法没有被继承,不能被访问</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-在不同包中，子类具能继承超类的-public-和-protected-成员。"><a href="#2-在不同包中，子类具能继承超类的-public-和-protected-成员。" class="headerlink" title="(2)  在不同包中，子类具能继承超类的 public 和 protected 成员。"></a>(2)  在不同包中，子类具能继承超类的 <code>public</code> 和 <code>protected</code> 成员。</h4><p>例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> mypackage1;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Animal</span> &#123;     <span class="comment">//类的访问修饰符必须为public，オ能被其他包中的类可见</span></span><br><span class="line">	<span class="keyword">public</span> <span class="type">int</span> legs ;</span><br><span class="line">	<span class="keyword">protected</span> <span class="type">float</span> weight ;</span><br><span class="line">	String color ;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">f</span><span class="params">()</span> &#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">package</span> mypackage2;</span><br><span class="line"><span class="keyword">import</span> mypackage1.Animal ;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Cat</span> <span class="keyword">extends</span> <span class="title class_">Animal</span>  &#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span> <span class="params">(String[]args)</span> &#123;</span><br><span class="line">		<span class="type">Cat</span> <span class="variable">tom</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Cats</span>() ;</span><br><span class="line">		tom.legs =<span class="number">4</span> ;         <span class="comment">//合法，不同包可以継‡公有変量</span></span><br><span class="line">		tom.weight = <span class="number">23f</span> ;    <span class="comment">//合法，不同包可以继承受保护的变量</span></span><br><span class="line">		tom.color = <span class="string">&quot;白色&quot;</span> ;   <span class="comment">//非法，不同包不可以继承友好変量</span></span><br><span class="line">		tom.f() ;             <span class="comment">//非法，私有方法没有被继承，不能访问</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wechat.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -195,111 +265,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/11/12/java%E7%BB%A7%E6%89%BF/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/11/11/eclipse%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E6%97%B6%E4%BC%9A%E8%BD%AC%E8%B7%B3%E7%BD%91%E9%A1%B5%E7%9A%84%E5%87%A0%E7%A7%8D%E5%8F%AF%E8%83%BD%E6%83%85%E5%86%B5%EF%BC%8C%E4%BB%A5%E5%8F%8A%E5%85%B6%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2022-11-11T13:13:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-11</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2022/11/11/eclipse%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E6%97%B6%E4%BC%9A%E8%BD%AC%E8%B7%B3%E7%BD%91%E9%A1%B5%E7%9A%84%E5%87%A0%E7%A7%8D%E5%8F%AF%E8%83%BD%E6%83%85%E5%86%B5%EF%BC%8C%E4%BB%A5%E5%8F%8A%E5%85%B6%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Eclipse</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/11/11/eclipse%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E6%97%B6%E4%BC%9A%E8%BD%AC%E8%B7%B3%E7%BD%91%E9%A1%B5%E7%9A%84%E5%87%A0%E7%A7%8D%E5%8F%AF%E8%83%BD%E6%83%85%E5%86%B5%EF%BC%8C%E4%BB%A5%E5%8F%8A%E5%85%B6%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/">Eclipse</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Eclipse</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">教程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/11/11/%E5%8D%9A%E5%9B%BEv15%E5%AE%89%E8%A3%85%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2022-11-11T13:13:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/11/11/%E5%8D%9A%E5%9B%BEv15%E5%AE%89%E8%A3%85%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">博图</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">教程</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">博图</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PLC</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -322,8 +387,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
